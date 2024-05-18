@@ -49,7 +49,7 @@ public class MyListener implements ITestListener {
 		// String random=result.getName();
 		TakesScreenshot t = (TakesScreenshot) LocalDriverFactory.getInstance().getLocalDriver();
 		File src = t.getScreenshotAs(OutputType.FILE);
-		String filePath = System.getProperty("user.dir") + "./TestReports/Screenshots/Screenshot_" + formatedDate
+		String filePath = System.getProperty("user.dir") + "/TestReports/Screenshots/Screenshot_" + formatedDate
 				+ ".png";
 		File des = new File(filePath);
 		try {

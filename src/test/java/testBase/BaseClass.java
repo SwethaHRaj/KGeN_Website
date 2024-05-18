@@ -39,7 +39,7 @@ public class BaseClass extends ActionEngine {
 				.setLocalDriver(driver.createDriver(PropertiesOperations.getProperty("browser")));
 		WebDriver driver = LocalDriverFactory.getInstance().getLocalDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.navigate().to(PropertiesOperations.getProperty("url"));
 
 //		login = new Login1();
