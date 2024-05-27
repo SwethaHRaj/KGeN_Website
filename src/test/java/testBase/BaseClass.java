@@ -10,10 +10,12 @@ import pageObjects.AddUser1;
 import pageObjects.Home;
 import pageObjects.Home1;
 import pageObjects.Login;
-import pageObjects.Login1;
 import pageObjects.NavBar;
+import pageObjects.Quests;
 import pageObjects.Users1;
+import reusableComponents.API;
 import reusableComponents.ActionEngine;
+import reusableComponents.AllApi;
 import reusableComponents.CommonMethods;
 import reusableComponents.DataBaseOperations;
 import reusableComponents.ExcelOperations;
@@ -32,6 +34,10 @@ public class BaseClass extends ActionEngine {
 	public Home home;
 	public Login login;
 	public NavBar navBar;
+	public Quests quests;
+	public API api;
+	public AllApi allApi;
+	
 
 	@BeforeMethod
 	public void setup() {
@@ -50,6 +56,8 @@ public class BaseClass extends ActionEngine {
 		home = new Home();
 		login = new Login();
 		navBar = new NavBar();
+		quests = new Quests();
+		allApi = new AllApi();
 	}
 
 	@AfterMethod

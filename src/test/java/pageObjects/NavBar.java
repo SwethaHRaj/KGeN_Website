@@ -31,7 +31,12 @@ public class NavBar extends BaseClass {
 	public void clickQuestsTab() {
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(questsTab), "Quests tab");
 	}
-
+	
+	public void verifyQuestsPageNavigation() {
+		String currentUrl = LocalDriverFactory.getInstance().getLocalDriver().getCurrentUrl();
+		assertEqualsString_Custom(currentUrl, "https://kgen.io/gamer/quests");
+	}
+	
 	public void clickGamesTab() {
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(gamesTab), "Games tab");
 	}

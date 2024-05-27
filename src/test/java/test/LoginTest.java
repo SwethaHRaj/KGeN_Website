@@ -2,6 +2,7 @@ package test;
 
 import org.testng.annotations.Test;
 
+import reusableComponents.AllApi;
 import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
 
@@ -18,5 +19,9 @@ public class LoginTest extends BaseClass {
 		login.clickSubmitButton();
 		navBar.verifyLogin();
 		navBar.clickQuestsTab();
+		navBar.verifyQuestsPageNavigation();
+		quests.clickLiveFilter();
+		allApi.getLiveQuests();
+		home.verifyFeaturedQuestsSection();
 	}
 }
