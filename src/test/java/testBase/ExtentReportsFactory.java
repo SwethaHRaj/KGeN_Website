@@ -15,7 +15,7 @@ public class ExtentReportsFactory {
 
 	public static ExtentReports setupExtentReport() {
 
-		SimpleDateFormat format = new SimpleDateFormat("dd-mm-yyyy hh-mm-ss");
+		SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy hh-mm-ss");
 		Date date = new Date();
 		String formatedDate = format.format(date);
 		String reportPath = System.getProperty("user.dir") + "/TestReports/ExtentReports/ExtentReport_" + formatedDate

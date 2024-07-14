@@ -6,12 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
-import pageObjects.AddUser1;
 import pageObjects.Home;
-import pageObjects.Home1;
+import pageObjects.KgenHome;
 import pageObjects.Login;
 import pageObjects.NavBar;
 import pageObjects.Quests;
+import pageObjects.Store;
 import pageObjects.Users1;
 import reusableComponents.API;
 import reusableComponents.ActionEngine;
@@ -37,6 +37,9 @@ public class BaseClass extends ActionEngine {
 	public Quests quests;
 	public API api;
 	public AllApi allApi;
+	public KgenHome kgenHome;
+	
+	public Store store;
 	
 
 	@BeforeMethod
@@ -45,8 +48,8 @@ public class BaseClass extends ActionEngine {
 				.setLocalDriver(driver.createDriver(PropertiesOperations.getProperty("browser")));
 		WebDriver driver = LocalDriverFactory.getInstance().getLocalDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.navigate().to(PropertiesOperations.getProperty("url"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		driver.get(PropertiesOperations.getProperty("stagekgenHome"));
 
 //		login = new Login1();
 //		users = new Users1();
@@ -58,9 +61,12 @@ public class BaseClass extends ActionEngine {
 		navBar = new NavBar();
 		quests = new Quests();
 		allApi = new AllApi();
+		
+		store = new Store();
+		kgenHome = new KgenHome();
 	}
 
-	@AfterMethod
+//	@AfterMethod
 	public void tearDown() {
 		LocalDriverFactory.getInstance().closeLocalDriver();
 	}

@@ -134,4 +134,15 @@ public class ActionEngine {
 		}
 	}
 	
+	public void verify_TabHighlight(WebElement we1,WebElement we2, String tabName) {
+		try {
+			if ((we1.getAttribute("fill").equalsIgnoreCase("#8CFF05")) && we2.getAttribute("data-text").equalsIgnoreCase(tabName))
+				ExtentTestFactory.getInstance().getExtentTest().log(Status.PASS,
+						tabName + "--> Tab Is Highlighted");
+		} catch (Exception e) {
+			ExtentTestFactory.getInstance().getExtentTest().log(Status.FAIL, tabName + "--> Tab Is Not Highlighted");
+		}
+	}
+	
+	
 }

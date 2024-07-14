@@ -9,7 +9,6 @@
     <classes>
       <class name="test.LoginTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setup"/>
           <include name="loginTest"/>
         </methods>

@@ -9,7 +9,7 @@ import testBase.LocalDriverFactory;
 public class Login extends BaseClass {
 
 	By loginHeader = By.xpath("//p[@class='MuiTypography-root MuiTypography-body1 css-xhjyaz']");
-	By phoneNumberField = By.id(":r1:");
+	By phoneNumberField = By.xpath("//input[@id=':r2:']");
 	By verifyButton = By.xpath("//button[normalize-space()='Verify']");
 	By otpDigitField = By.xpath("//input[@id='otp-input-0']");
 	By submitButton = By.xpath("//button[normalize-space()='Submit']");
