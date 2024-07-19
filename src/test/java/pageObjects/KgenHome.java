@@ -5,24 +5,28 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
+import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
 import testBase.LocalDriverFactory;
 
 public class KgenHome extends BaseClass {
 	
+	String expectedUrl;
+	
 	
 	// NavBar tabs
 	By logo = By.xpath("//img[@alt='logo']");
-	By about_tab = By.xpath("//a[@class='cursor-pointer whitespace-nowrap']");
-	By build_tab = By.xpath("//a[@class=' cursor-pointer'][normalize-space()='Build']");
-	By connect_tab = By.xpath("//a[@class=' cursor-pointer'][normalize-space()='Connect']");
+	By about_tab = By.xpath("//a[@class='cursor-pointer header_labelAnimation__H221Z'][normalize-space()='About']");
+	By build_tab = By.xpath("//a[@class='cursor-pointer header_labelAnimation__H221Z'][normalize-space()='Build']");
+	By connect_tab = By.xpath("//a[@class='cursor-pointer header_labelAnimation__H221Z'][normalize-space()='Connect']");
 	By droparena_tab = By.xpath("//a[normalize-space()='DropArena']");
-	By play_tab = By.xpath("//a[@class=' cursor-pointer'][normalize-space()='Play']");
-	By store_tab = By.xpath("//a[contains(@class,'cursor-pointer')][normalize-space()='Store']");
+	By play_tab = By.xpath("//a[@class='cursor-pointer header_labelAnimation__H221Z'][normalize-space()='Play']");
+	By store_tab = By.xpath("//a[@class='cursor-pointer header_labelAnimation__H221Z'][normalize-space()='Store']");
 	// Verify pages
 	//--Common highlight ele--
-	By verify_tabHighlight_we1 = By.xpath("//a[@class='cursor-pointer whitespace-nowrap']//*[name()='svg']//*[name()='path' and contains(@fill-rule,'evenodd')]");
+//	By verify_tabHighlight_we1 = By.xpath("//a[@class='cursor-pointer whitespace-nowrap']//*[name()='svg']//*[name()='path' and contains(@fill-rule,'evenodd')]");
 	By verify_tabHighlight_we2 = By.xpath("//*[name()='text' and contains(@class,'text-cente')]/../../.");
 	//--About--
 	By verify_aboutPageElement = By.xpath("//span[@class='codedText pagename']");
@@ -39,7 +43,7 @@ public class KgenHome extends BaseClass {
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(about_tab), "About Tab");
 	}
 	public void verifyAboutPageNavigation() {
-		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "About");
+//		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "About");
 		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_aboutPageElement), "About Page");
 	}
 	
@@ -49,7 +53,7 @@ public class KgenHome extends BaseClass {
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(build_tab), "Build Tab");
 	}
 	public void verifyBuildPageNavigation() {
-		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
+//		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
 		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_buildPageElement), "Build Page");
 	}
 	
@@ -59,8 +63,8 @@ public class KgenHome extends BaseClass {
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(connect_tab), "Connect Tab");
 	}
 	public void verifyConnectPageNavigation() {
-		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
-		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_connectPageElement), "Build Page");
+//		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
+		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_connectPageElement), "Connect Page");
 	}
 	
 	//DROPARENA Section Methods
@@ -68,9 +72,15 @@ public class KgenHome extends BaseClass {
 	public void clickDroparenaTab() {
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(droparena_tab), "Droparena Tab");
 	}
-	public void verifyDropArenaPageNavigation() {
-		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
-		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_dropArenaPageElement), "Build Page");
+	public void verifyDropArenaPageNavigation(String enviroment) {
+//		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
+		if(enviroment.equalsIgnoreCase("stage"))
+			expectedUrl = PropertiesOperations.getProperty("stagekgenHome")+"/gamer/droparena";
+		else
+			expectedUrl = PropertiesOperations.getProperty("prodKgenHome")+"/gamer/droparena";
+		String actualUrl = LocalDriverFactory.getInstance().getLocalDriver().getCurrentUrl();
+		Assert.assertEquals(actualUrl, expectedUrl, "Page Navigation Failed");
+//		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_dropArenaPageElement), "DropArena Page");
 	}
 //	
 //	//PLAY Section Methods

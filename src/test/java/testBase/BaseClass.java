@@ -7,6 +7,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import pageObjects.Home;
+import pageObjects.KgenGamerHome;
 import pageObjects.KgenHome;
 import pageObjects.Login;
 import pageObjects.NavBar;
@@ -38,6 +39,7 @@ public class BaseClass extends ActionEngine {
 	public API api;
 	public AllApi allApi;
 	public KgenHome kgenHome;
+	public KgenGamerHome kgenGamerHome;
 	
 	public Store store;
 	
@@ -64,9 +66,10 @@ public class BaseClass extends ActionEngine {
 		
 		store = new Store();
 		kgenHome = new KgenHome();
+		kgenGamerHome = new KgenGamerHome();
 	}
 
-//	@AfterMethod
+	@AfterMethod
 	public void tearDown() {
 		LocalDriverFactory.getInstance().closeLocalDriver();
 	}

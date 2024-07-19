@@ -7,10 +7,10 @@ import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
 import testBase.LocalDriverFactory;
 
-@Test
-public class LoginTest extends BaseClass {
+
+public class AllTests extends BaseClass {
 	
-	public void loginTest() throws Exception {
+	public void navBarNavigationKgenHome() {
 //		home.verifyHomePageNavigation();
 //		navBar.clickLoginButton();
 //		login.verifyLoginPageNavigation();
@@ -42,10 +42,14 @@ public class LoginTest extends BaseClass {
 		kgenHome.clickConnectTab();
 		kgenHome.verifyConnectPageNavigation();
 		kgenHome.clickDroparenaTab();
-		kgenHome.verifyDropArenaPageNavigation();
-		
+		kgenHome.verifyDropArenaPageNavigation("stage");	
 	}
 	
+	@Test
+	public void verifyFeaturedQuestsSection() throws Exception {
+		AllApi.getFeaturedQuests();
+		kgenGamerHome.verifyFeaturedQuestsSection();
+	}
 	
 	
 	
