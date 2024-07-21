@@ -40,7 +40,14 @@ public class KgenHome extends BaseClass {
 	//ABOUT Section Methods
 	
 	public void clickAboutTab() {	
+
+        WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(about_tab)));
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(about_tab), "About Tab");
+		    
+//		CachedWebElement cachedElement = new CachedWebElement(LocalDriverFactory.getInstance().getLocalDriver(), about_tab);
+//		cachedElement.click();
+//		cachedElement.verify_PageNavigation("About Page");
 	}
 	public void verifyAboutPageNavigation() {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "About");
@@ -50,7 +57,14 @@ public class KgenHome extends BaseClass {
 	//BUILD Section Methods
 	
 	public void clickBuildTab() {
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(build_tab)));
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(build_tab), "Build Tab");
+		
+		
+//		CachedWebElement cachedElement = new CachedWebElement(LocalDriverFactory.getInstance().getLocalDriver(), build_tab);
+//		cachedElement.click();
+//		cachedElement.verify_PageNavigation("Build Page");
 	}
 	public void verifyBuildPageNavigation() {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
@@ -60,7 +74,13 @@ public class KgenHome extends BaseClass {
 	//CONNECT Section Methods
 	
 	public void clickConnectTab() {
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(connect_tab)));
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(connect_tab), "Connect Tab");
+		
+//		CachedWebElement cachedElement = new CachedWebElement(LocalDriverFactory.getInstance().getLocalDriver(), connect_tab);
+//		cachedElement.click();
+//		cachedElement.verify_PageNavigation("Connect Page");
 	}
 	public void verifyConnectPageNavigation() {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
@@ -70,7 +90,13 @@ public class KgenHome extends BaseClass {
 	//DROPARENA Section Methods
 	
 	public void clickDroparenaTab() {
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(droparena_tab)));
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(droparena_tab), "Droparena Tab");
+		
+//		CachedWebElement cachedElement = new CachedWebElement(LocalDriverFactory.getInstance().getLocalDriver(), droparena_tab);
+//		cachedElement.click();
+//		cachedElement.verify_PageNavigation("DropArena Page");
 	}
 	public void verifyDropArenaPageNavigation(String enviroment) {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");

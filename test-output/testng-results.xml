@@ -1,57 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-19T20:08:27 IST" name="Suite" finished-at="2024-07-19T20:10:42 IST" duration-ms="135027">
+  <suite started-at="2024-07-21T20:11:24 IST" name="Suite" finished-at="2024-07-21T20:12:29 IST" duration-ms="64086">
     <groups>
     </groups>
-    <test started-at="2024-07-19T20:08:27 IST" name="Test" finished-at="2024-07-19T20:10:42 IST" duration-ms="135027">
+    <test started-at="2024-07-21T20:11:24 IST" name="Test" finished-at="2024-07-21T20:12:29 IST" duration-ms="64086">
       <class name="test.AllTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.AllTests@2e005c4b]" started-at="2024-07-19T20:08:27 IST" name="setup" finished-at="2024-07-19T20:09:27 IST" duration-ms="59462" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.AllTests@694abbdc]" started-at="2024-07-21T20:11:25 IST" name="setup" finished-at="2024-07-21T20:11:45 IST" duration-ms="20467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyFeaturedQuestsSection()[pri:0, instance:test.AllTests@2e005c4b]" started-at="2024-07-19T20:09:27 IST" name="verifyFeaturedQuestsSection" finished-at="2024-07-19T20:10:41 IST" duration-ms="74566" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //a[@href='/gamer/quests/karate-combat-v']//div[@class='MuiStack-root MuiCardContent-root css-1l32c5v'] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: /var/folders/6y/z2z2scn57sz...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55061}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55061/devtoo..., se:cdpVersion: 126.0.6478.183, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5ac2cfbd6c8f51b188dd9262f01742bf]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[@href='/gamer/quests/karate-combat-v']//div[@class='MuiStack-root MuiCardContent-root css-1l32c5v'] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '4.22.0', revision: 'c5f3146703*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.4', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.183, chrome: {chromedriverVersion: 126.0.6478.182 (5b5d8292ddf..., userDataDir: /var/folders/6y/z2z2scn57sz...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55061}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55061/devtoo..., se:cdpVersion: 126.0.6478.183, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 5ac2cfbd6c8f51b188dd9262f01742bf
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at pageObjects.KgenGamerHome.verifyFeaturedQuestsSection(KgenGamerHome.java:26)
-at test.AllTests.verifyFeaturedQuestsSection(AllTests.java:51)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-at java.base/java.lang.Thread.run(Thread.java:1570)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="navBarNavigationKgenHome()[pri:0, instance:test.AllTests@694abbdc]" started-at="2024-07-21T20:11:45 IST" name="navBarNavigationKgenHome" finished-at="2024-07-21T20:12:28 IST" duration-ms="43114" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFeaturedQuestsSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.AllTests@2e005c4b]" started-at="2024-07-19T20:10:42 IST" name="tearDown" finished-at="2024-07-19T20:10:42 IST" duration-ms="603" status="PASS">
+        </test-method> <!-- navBarNavigationKgenHome -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.AllTests@694abbdc]" started-at="2024-07-21T20:12:28 IST" name="tearDown" finished-at="2024-07-21T20:12:29 IST" duration-ms="392" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

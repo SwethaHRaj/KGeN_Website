@@ -20,38 +20,10 @@ public class DriverFactory {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();	
-			options.addArguments("--disable-notifications");
-	        options.addArguments("--disable-popup-blocking");
-	        options.addArguments("--disable-infobars");
-	        options.addArguments("--disable-extensions");
-	        options.addArguments("--disable-features=EnableEphemeralFlashPermission,EnablePasswordGeneration");
-	        options.addArguments("--disable-background-timer-throttling");
-	        options.addArguments("--disable-backgrounding-occluded-windows");
-	        options.addArguments("--disable-renderer-backgrounding");
-	        options.addArguments("--chrome.switches","--disable-extensions"); 
-	        options.addArguments("--disable-save-password");
-			options.addArguments("--no-crash-upload");
-			options.addArguments("--deny-permission-prompts");
-			options.addArguments("--no-first-run");
-			options.addArguments("--disable-features=FirstRunUI");
-			options.addArguments("--disable-features=OptimizationHints");
-			options.addArguments("--disable-features=OptimizationHintsFetching");
-			options.addArguments("--disable-features=Translate");
-			options.addArguments("--disable-features=OptimizationTargetPrediction");
-			options.addArguments("--disable-features=OptimizationGuideModelDownloading");
-			options.addArguments("--disable-features=DownloadBubble");
-			options.addArguments("--disable-features=DownloadBubbleV2");
-			options.addArguments("--disable-features=InsecureDownloadWarnings");
-			options.addArguments("--disable-features=InterestFeedContentSuggestions");
-			options.addArguments("--disable-features=OptimizationHints");
-			options.addArguments("--disable-features=OptimizationHintsFetching");
-			options.addArguments("--disable-features=Translate");
-			options.addArguments("--disable-features=OptimizationTargetPrediction");
-			options.addArguments("--disable-features=OptimizationGuideModelDownloading");
-			options.addArguments("--disable-features=InsecureDownloadWarnings");
-			options.addArguments("--disable-features=InterestFeedContentSuggestions");
-			options.addArguments("--enable-automation");
-	        options.addArguments("--incongnito");
+//	        options.addArguments("--incongnito");
+			options.addArguments("--ash-no-nudges");
+			
+			
 			driver = new ChromeDriver(options);
 		} else if (browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();

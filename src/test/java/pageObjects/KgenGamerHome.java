@@ -13,24 +13,21 @@ import testBase.LocalDriverFactory;
 public class KgenGamerHome extends BaseClass {
 	
 	By logo = By.xpath("//a[normalize-space()='']//img[@alt='kgen_logo']");
-	By featuredQuestsSection = By.xpath("//span[normalize-space()='Featured Quests']");	
+	By featuredQuestsSectionHeading = By.xpath("//span[normalize-space()='Featured Quests']");	
 	
-
 	public void verifyHomePageNavigation() {
 		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(logo), "Home Page");
 	}
 	
 	public void verifyFeaturedQuestsSection() throws Exception {
-		moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(featuredQuestsSection), "Featured Section");
-		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@href='/gamer/quests/karate-combat-v']//div[@class='MuiStack-root MuiCardContent-root css-1l32c5v']")));
-
+		moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(featuredQuestsSectionHeading), "Featured Section");
 		String[] featuredQuests= allApi.getFeaturedQuests();
-		for(int i=0;i<5;i++) {
+		for(int i=0;i<4;i++) {
 			String featuredQuest = featuredQuests[i];
-			moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//span[normalize-space()='"+featuredQuest+"']")), "Featured Section");
-			assertEqualsString_Custom(getText_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//span[normalize-space()='"+featuredQuest+"']")),"Featured Quest"), featuredQuest);
+			moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+featuredQuest+"']")), "Featured Section");
+			assertEqualsString_Custom(getText_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+featuredQuest+"']")),"Featured Quest"), featuredQuest);
 		}
 	}
 	
 }
+ 

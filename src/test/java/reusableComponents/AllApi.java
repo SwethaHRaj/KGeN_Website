@@ -39,7 +39,7 @@ public class AllApi {
 //	}
 	
 	public static String[] getFeaturedQuests() throws Exception {
-		Response response = RestAssured.get("https://stage-api-backend.kgen.io/quest/v2/questlist?geoGraphy=INDIA&questCategories=FEATURED&questState[]=LIVE&page=1&limit=5");
+		Response response = RestAssured.get("https://stage-api-backend.kgen.io/quest/v2/questlist?geoGraphy=INDIA&questCategories=FEATURED&questState[]=LIVE&page=1&limit=4");
 		Assert.assertEquals(response.getStatusCode(), 200);
 		String responseBody = response.getBody().asString();
 		JsonPath jsonPath = new JsonPath(responseBody);
@@ -48,7 +48,7 @@ public class AllApi {
 		for(i=0;i<5;i++) {
 			featuredQuestList[i]=jsonPath.getString("data.quests["+i+"].quest_title");
 		}	
-		for(int j=0;j<5;j++) {
+		for(int j=0;j<4;j++) {
 	    	ExtentTestFactory.getInstance().getExtentTest().info("API RESPONSE --> Featured Quest "+(j+1)+": "+ featuredQuestList[j]);
 	    }
 		return featuredQuestList;

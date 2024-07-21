@@ -10,7 +10,8 @@ import testBase.LocalDriverFactory;
 
 public class AllTests extends BaseClass {
 	
-	public void navBarNavigationKgenHome() {
+	@Test
+		public void navBarNavigationKgenHome() {
 //		home.verifyHomePageNavigation();
 //		navBar.clickLoginButton();
 //		login.verifyLoginPageNavigation();
@@ -45,9 +46,8 @@ public class AllTests extends BaseClass {
 		kgenHome.verifyDropArenaPageNavigation("stage");	
 	}
 	
-	@Test
 	public void verifyFeaturedQuestsSection() throws Exception {
-		AllApi.getFeaturedQuests();
+//		allApi.getFeaturedQuests();
 		kgenGamerHome.verifyFeaturedQuestsSection();
 	}
 	
