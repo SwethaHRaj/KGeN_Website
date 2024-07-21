@@ -1,5 +1,7 @@
 package test;
 
+import java.time.Duration;
+
 import org.testng.annotations.Test;
 
 import reusableComponents.AllApi;
@@ -11,7 +13,7 @@ import testBase.LocalDriverFactory;
 public class AllTests extends BaseClass {
 	
 	@Test
-		public void navBarNavigationKgenHome() {
+		public void navBarNavigationKgenHome() throws InterruptedException {
 //		home.verifyHomePageNavigation();
 //		navBar.clickLoginButton();
 //		login.verifyLoginPageNavigation();
@@ -36,6 +38,7 @@ public class AllTests extends BaseClass {
 //		store.enterOtp(PropertiesOperations.getProperty("otp"));
 //		store.clickSubmitButton();
 		
+		Thread.sleep(Duration.ofSeconds(30));
 		kgenHome.clickAboutTab();
 		kgenHome.verifyAboutPageNavigation();
 		kgenHome.clickBuildTab();

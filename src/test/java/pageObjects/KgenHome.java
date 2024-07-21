@@ -39,8 +39,8 @@ public class KgenHome extends BaseClass {
 	
 	//ABOUT Section Methods
 	
-	public void clickAboutTab() {	
-
+	public void clickAboutTab() throws InterruptedException {	
+		
         WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
         wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(about_tab)));
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(about_tab), "About Tab");
@@ -51,6 +51,8 @@ public class KgenHome extends BaseClass {
 	}
 	public void verifyAboutPageNavigation() {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "About");
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_aboutPageElement)));
 		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_aboutPageElement), "About Page");
 	}
 	
@@ -68,6 +70,8 @@ public class KgenHome extends BaseClass {
 	}
 	public void verifyBuildPageNavigation() {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_buildPageElement)));
 		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_buildPageElement), "Build Page");
 	}
 	
@@ -84,6 +88,8 @@ public class KgenHome extends BaseClass {
 	}
 	public void verifyConnectPageNavigation() {
 //		verify_TabHighlight(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we1),LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_tabHighlight_we2), "Build");
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_connectPageElement)));
 		verify_PageNavigation(LocalDriverFactory.getInstance().getLocalDriver().findElement(verify_connectPageElement), "Connect Page");
 	}
 	
