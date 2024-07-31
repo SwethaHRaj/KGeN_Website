@@ -10,7 +10,7 @@
       <class name="test.AllTests">
         <methods>
           <include name="tearDown"/>
-          <include name="navBarNavigationKgenHome"/>
+          <include name="verifyFeaturedQuestsSection"/>
           <include name="setup"/>
         </methods>
       </class> <!-- test.AllTests -->

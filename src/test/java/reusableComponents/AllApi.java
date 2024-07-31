@@ -43,9 +43,9 @@ public class AllApi {
 		Assert.assertEquals(response.getStatusCode(), 200);
 		String responseBody = response.getBody().asString();
 		JsonPath jsonPath = new JsonPath(responseBody);
-		String[] featuredQuestList = new String[5];
+		String[] featuredQuestList = new String[4];
 		int i;
-		for(i=0;i<5;i++) {
+		for(i=0;i<4;i++) {
 			featuredQuestList[i]=jsonPath.getString("data.quests["+i+"].quest_title");
 		}	
 		for(int j=0;j<4;j++) {
@@ -53,5 +53,29 @@ public class AllApi {
 	    }
 		return featuredQuestList;
 	}
+	
+	public static String[] getFeaturedGames() throws Exception {
+		Response response = RestAssured.get("https://stage-api-backend.kgen.io/game/filter?gameCategories=Editor's Choice");
+		Assert.assertEquals(response.getStatusCode(), 200);
+		String responseBody = response.getBody().asString();
+		JsonPath jsonPath = new JsonPath(responseBody);
+		String[] featuredGameList = new String[4];
+		int i;
+		for(i=0;i<4;i++) {
+			featuredGameList[i]=jsonPath.getString("games["+i+"].game.name");
+		}	
+		for(int j=0;j<4;j++) {
+	    	ExtentTestFactory.getInstance().getExtentTest().info("API RESPONSE --> Featured Game "+(j+1)+": "+ featuredGameList[j]);
+	    }
+		return featuredGameList;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
 

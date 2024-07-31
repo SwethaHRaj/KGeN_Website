@@ -12,7 +12,7 @@ import testBase.LocalDriverFactory;
 
 public class AllTests extends BaseClass {
 	
-	@Test
+//	@Test
 		public void navBarNavigationKgenHome() throws InterruptedException {
 //		home.verifyHomePageNavigation();
 //		navBar.clickLoginButton();
@@ -49,9 +49,11 @@ public class AllTests extends BaseClass {
 		kgenHome.verifyDropArenaPageNavigation("stage");	
 	}
 	
+	@Test
 	public void verifyFeaturedQuestsSection() throws Exception {
-//		allApi.getFeaturedQuests();
+//		allApi.getFeaturedGames();
 		kgenGamerHome.verifyFeaturedQuestsSection();
+		kgenGamerHome.verifyFeaturedGamesSection();
 	}
 	
 	

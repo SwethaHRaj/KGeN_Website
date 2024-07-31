@@ -51,7 +51,7 @@ public class BaseClass extends ActionEngine {
 		WebDriver driver = LocalDriverFactory.getInstance().getLocalDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.get(PropertiesOperations.getProperty("stagekgenHome"));
+		driver.get(PropertiesOperations.getProperty("stagekgenGamerHome"));
 
 //		login = new Login1();
 //		users = new Users1();
