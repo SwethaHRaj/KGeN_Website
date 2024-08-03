@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="test.AllTests" class="method navigator-link" hash-for-method="verifyFeaturedQuestsSection">verifyFeaturedQuestsSection</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="test.AllTests" class="method navigator-link" hash-for-method="verifyGamerQuestsPage">verifyGamerQuestsPage</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -126,9 +126,9 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyFeaturedQuestsSection">
-                  </a> <!-- verifyFeaturedQuestsSection -->
-                  <span class="method-name">verifyFeaturedQuestsSection</span>
+                  <a name="verifyGamerQuestsPage">
+                  </a> <!-- verifyGamerQuestsPage -->
+                  <span class="method-name">verifyGamerQuestsPage</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -147,7 +147,7 @@
     &lt;listener class-name=&quot;reusableComponents.MyListener&quot;/&gt;
     &lt;listener class-name=&quot;reusableComponents.TestRetryAnalyserListener&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; parallel=&quot;methods&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;methods&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;test.AllTests&quot;/&gt;
     &lt;/classes&gt;
@@ -191,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyFeaturedQuestsSection')
+data.setCell(0, 1, 'verifyGamerQuestsPage')
 data.setCell(0, 2, 'test.AllTests')
-data.setCell(0, 3, 47239);
+data.setCell(0, 3, 249885);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 47 seconds</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -230,12 +230,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">verifyFeaturedQuestsSection</span>
-                <span class="method-start">36659 ms</span>
+                <span class="method-name">verifyGamerQuestsPage</span>
+                <span class="method-start">53505 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">83901 ms</span>
+                <span class="method-start">303398 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

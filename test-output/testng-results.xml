@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-07-31T08:40:05 IST" name="Suite" finished-at="2024-07-31T08:41:30 IST" duration-ms="84677">
+  <suite started-at="2024-08-03T22:02:48 IST" name="Suite" finished-at="2024-08-03T22:07:52 IST" duration-ms="303729">
     <groups>
     </groups>
-    <test started-at="2024-07-31T08:40:05 IST" name="Test" finished-at="2024-07-31T08:41:30 IST" duration-ms="84677">
+    <test started-at="2024-08-03T22:02:48 IST" name="Test" finished-at="2024-08-03T22:07:52 IST" duration-ms="303729">
       <class name="test.AllTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.AllTests@2e005c4b]" started-at="2024-07-31T08:40:05 IST" name="setup" finished-at="2024-07-31T08:40:42 IST" duration-ms="36658" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-03T22:02:48 IST" name="setup" finished-at="2024-08-03T22:03:42 IST" duration-ms="53504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyFeaturedQuestsSection()[pri:0, instance:test.AllTests@2e005c4b]" started-at="2024-07-31T08:40:42 IST" name="verifyFeaturedQuestsSection" finished-at="2024-07-31T08:41:29 IST" duration-ms="47239" status="PASS">
+        <test-method signature="verifyGamerQuestsPage()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-03T22:03:42 IST" name="verifyGamerQuestsPage" finished-at="2024-08-03T22:07:51 IST" duration-ms="249885" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFeaturedQuestsSection -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.AllTests@2e005c4b]" started-at="2024-07-31T08:41:29 IST" name="tearDown" finished-at="2024-07-31T08:41:30 IST" duration-ms="671" status="PASS">
+        </test-method> <!-- verifyGamerQuestsPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-03T22:07:51 IST" name="tearDown" finished-at="2024-08-03T22:07:52 IST" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

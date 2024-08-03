@@ -12,6 +12,8 @@ import testBase.LocalDriverFactory;
 
 public class AllTests extends BaseClass {
 	
+	//set property for kgen home page
+	
 //	@Test
 		public void navBarNavigationKgenHome() throws InterruptedException {
 //		home.verifyHomePageNavigation();
@@ -38,7 +40,7 @@ public class AllTests extends BaseClass {
 //		store.enterOtp(PropertiesOperations.getProperty("otp"));
 //		store.clickSubmitButton();
 		
-		Thread.sleep(Duration.ofSeconds(30));
+//		Thread.sleep(Duration.ofSeconds(30));
 		kgenHome.clickAboutTab();
 		kgenHome.verifyAboutPageNavigation();
 		kgenHome.clickBuildTab();
@@ -49,13 +51,27 @@ public class AllTests extends BaseClass {
 		kgenHome.verifyDropArenaPageNavigation("stage");	
 	}
 	
-	@Test
-	public void verifyFeaturedQuestsSection() throws Exception {
-//		allApi.getFeaturedGames();
+		
+	//set property for gamer home page	
+		
+//	@Test
+	public void verifyGamerHomePage() throws Exception {
+//		allApi.getTrendingNowGames();
 		kgenGamerHome.verifyFeaturedQuestsSection();
 		kgenGamerHome.verifyFeaturedGamesSection();
+		kgenGamerHome.verifyTrendingGamesSection();
 	}
 	
+	//set property for gamer quests page
+	
+//	@Test(invocationCount = 3, threadPoolSize = 3)
+	@Test
+	public void verifyGamerQuestsPage() throws Exception {
+//		kgenGamerQuests.verifyAllQuests();
+		kgenGamerQuests.verifyLiveQuests();
+		kgenGamerQuests.verifyUpcomingQuests();
+		kgenGamerQuests.verifyEndedQuests();
+	}
 	
 	
 	

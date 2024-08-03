@@ -11,7 +11,7 @@ import pageObjects.KgenGamerHome;
 import pageObjects.KgenHome;
 import pageObjects.Login;
 import pageObjects.NavBar;
-import pageObjects.Quests;
+import pageObjects.KgenGamerQuests;
 import pageObjects.Store;
 import pageObjects.Users1;
 import reusableComponents.API;
@@ -35,11 +35,12 @@ public class BaseClass extends ActionEngine {
 	public Home home;
 	public Login login;
 	public NavBar navBar;
-	public Quests quests;
+	public KgenGamerQuests quests;
 	public API api;
 	public AllApi allApi;
 	public KgenHome kgenHome;
 	public KgenGamerHome kgenGamerHome;
+	public KgenGamerQuests kgenGamerQuests;
 	
 	public Store store;
 	
@@ -51,7 +52,7 @@ public class BaseClass extends ActionEngine {
 		WebDriver driver = LocalDriverFactory.getInstance().getLocalDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.get(PropertiesOperations.getProperty("stagekgenGamerHome"));
+		driver.get(PropertiesOperations.getProperty("stageKgenGamerQuests"));
 
 //		login = new Login1();
 //		users = new Users1();
@@ -61,12 +62,13 @@ public class BaseClass extends ActionEngine {
 		home = new Home();
 		login = new Login();
 		navBar = new NavBar();
-		quests = new Quests();
+		quests = new KgenGamerQuests();
 		allApi = new AllApi();
 		
 		store = new Store();
 		kgenHome = new KgenHome();
 		kgenGamerHome = new KgenGamerHome();
+		kgenGamerQuests = new KgenGamerQuests();
 	}
 
 	@AfterMethod
