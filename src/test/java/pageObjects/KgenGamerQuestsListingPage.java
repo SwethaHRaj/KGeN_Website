@@ -1,23 +1,13 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import reusableComponents.API;
 import reusableComponents.AllApi;
-import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
 import testBase.ExtentTestFactory;
 import testBase.LocalDriverFactory;
 
-public class KgenGamerQuests extends BaseClass {
+public class KgenGamerQuestsListingPage extends BaseClass {
 
 	// Header
 	By questsHeaderText = By.xpath("//span[@class='MuiTypography-root MuiTypography-h4 css-1dg7emc']");
@@ -36,7 +26,6 @@ public class KgenGamerQuests extends BaseClass {
 	
 //	By  = By.xpath("");
 //	By  = By.xpath("");
-
 	
 	// partial failure
 	public void verifyAllQuests() throws Exception {
@@ -51,12 +40,13 @@ public class KgenGamerQuests extends BaseClass {
 		String[] allQuests= AllApi.getAllQuests();
 		for(int i=0;i<allQuests.length;i++) {							
 			String questTitle = allQuests[i];
-			//div/div[200]/div/div[3]/div[1]/div/p 
+			//div/div["+(i+1)+"]/div/div[3]/div[1]/div/p 
 			//p[normalize-space()='"+questTitle+"']
-			moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//div/div["+(i+1)+"]/div/div[3]/div[1]/div/p")), "Quest "+(i+1)+"");
-			assertEqualsString_Custom(getText_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//div/div["+(i+1)+"]/div/div[3]/div[1]/div/p")),"Quest "+(i+1)+""), questTitle);
+			moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+questTitle+"']")), "Quest "+(i+1)+"");
+			assertEqualsString_Custom(getText_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+questTitle+"']")),"Quest "+(i+1)+""), questTitle);
 		}
 		ExtentTestFactory.getInstance().getExtentTest().info("------------------All Quests Verification Successful------------------");	
+		
 	}
 	
 	
@@ -130,6 +120,25 @@ public class KgenGamerQuests extends BaseClass {
 		ExtentTestFactory.getInstance().getExtentTest().info("------------------Ended Quests Verification Successful------------------");	
 	}
 
+	public void clickQuestCard() throws Exception {
+		
+		ExtentTestFactory.getInstance().getExtentTest().info("------------------Click On Quest Card Started------------------");
+		moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(liveTab), "Quests 'Live' Tab");
+		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(liveTab), "Quests 'Live' Tab");
+		String[] liveQuests= AllApi.getLiveQuests();
+		for(int i=0;i<liveQuests.length;i++) {							
+			String questTitle = liveQuests[i];
+			//div/div[200]/div/div[3]/div[1]/div/p 
+			//p[normalize-space()='"+questTitle+"']
+			if(questTitle.equalsIgnoreCase("demo Store test")) {
+			moveToElement_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+questTitle+"']")), "Quest Card - "+(i+1)+""+questTitle+"");
+			assertEqualsString_Custom(getText_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+questTitle+"']")),"Quest Card - "+(i+1)+""+questTitle+""), questTitle);
+			click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//p[normalize-space()='"+questTitle+"']")), "Quest Card - "+(i+1)+""+questTitle+"");
+			}
+		}
+		ExtentTestFactory.getInstance().getExtentTest().info("------------------Click On Quest Card Successful------------------");	
+	}
+	
 
 }
 

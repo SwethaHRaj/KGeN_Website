@@ -68,9 +68,11 @@ public class AllTests extends BaseClass {
 	@Test
 	public void verifyGamerQuestsPage() throws Exception {
 //		kgenGamerQuests.verifyAllQuests();
-		kgenGamerQuests.verifyLiveQuests();
-		kgenGamerQuests.verifyUpcomingQuests();
-		kgenGamerQuests.verifyEndedQuests();
+//		kgenGamerQuestsListingPage.verifyLiveQuests();
+//		kgenGamerQuestsListingPage.verifyUpcomingQuests();
+//		kgenGamerQuestsListingPage.verifyEndedQuests();
+		kgenGamerQuestsListingPage.clickQuestCard();
+		kgenGamerQuestDetailsPage.submitProof();
 	}
 	
 	

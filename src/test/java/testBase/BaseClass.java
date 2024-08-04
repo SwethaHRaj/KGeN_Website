@@ -8,10 +8,11 @@ import org.testng.annotations.BeforeMethod;
 
 import pageObjects.Home;
 import pageObjects.KgenGamerHome;
+import pageObjects.KgenGamerQuestDetailsPage;
 import pageObjects.KgenHome;
 import pageObjects.Login;
 import pageObjects.NavBar;
-import pageObjects.KgenGamerQuests;
+import pageObjects.KgenGamerQuestsListingPage;
 import pageObjects.Store;
 import pageObjects.Users1;
 import reusableComponents.API;
@@ -35,12 +36,13 @@ public class BaseClass extends ActionEngine {
 	public Home home;
 	public Login login;
 	public NavBar navBar;
-	public KgenGamerQuests quests;
+	public KgenGamerQuestsListingPage quests;
 	public API api;
 	public AllApi allApi;
 	public KgenHome kgenHome;
 	public KgenGamerHome kgenGamerHome;
-	public KgenGamerQuests kgenGamerQuests;
+	public KgenGamerQuestsListingPage kgenGamerQuestsListingPage;
+	public KgenGamerQuestDetailsPage kgenGamerQuestDetailsPage;
 	
 	public Store store;
 	
@@ -62,13 +64,14 @@ public class BaseClass extends ActionEngine {
 		home = new Home();
 		login = new Login();
 		navBar = new NavBar();
-		quests = new KgenGamerQuests();
+		quests = new KgenGamerQuestsListingPage();
 		allApi = new AllApi();
 		
 		store = new Store();
 		kgenHome = new KgenHome();
 		kgenGamerHome = new KgenGamerHome();
-		kgenGamerQuests = new KgenGamerQuests();
+		kgenGamerQuestsListingPage = new KgenGamerQuestsListingPage();
+		kgenGamerQuestDetailsPage = new KgenGamerQuestDetailsPage();
 	}
 
 	@AfterMethod
