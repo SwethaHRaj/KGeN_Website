@@ -67,3 +67,9 @@ public class CachedWebElement {
     // Add more methods as needed, following the same pattern
 }
 
+
+//Usage Example
+//CachedWebElement cachedElement = new CachedWebElement(LocalDriverFactory.getInstance().getLocalDriver(), build_tab);
+//cachedElement.click();
+//cachedElement.verify_PageNavigation("Build Page");
+

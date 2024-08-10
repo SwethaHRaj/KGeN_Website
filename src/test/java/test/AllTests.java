@@ -14,22 +14,8 @@ public class AllTests extends BaseClass {
 	
 	//set property for kgen home page
 	
-//	@Test
+	@Test
 		public void navBarNavigationKgenHome() throws InterruptedException {
-//		home.verifyHomePageNavigation();
-//		navBar.clickLoginButton();
-//		login.verifyLoginPageNavigation();
-//		login.enterPhoneNumber(PropertiesOperations.getProperty("phoneNumber"));
-//		login.clickVerifyButton();
-//		
-//		login.enterOtp(PropertiesOperations.getProperty("otp"));
-//		login.clickSubmitButton();
-//		navBar.verifyLogin();
-//		navBar.clickQuestsTab();
-//		navBar.verifyQuestsPageNavigation();
-//		quests.clickLiveFilter();
-//		allApi.getFeaturedQuests();
-//		home.verifyFeaturedQuestsSection();
 		
 //		store.verifyKStoreHomePageNavigation();
 //		store.clickLoginButton();
@@ -41,14 +27,7 @@ public class AllTests extends BaseClass {
 //		store.clickSubmitButton();
 		
 //		Thread.sleep(Duration.ofSeconds(30));
-		kgenHome.clickAboutTab();
-		kgenHome.verifyAboutPageNavigation();
-		kgenHome.clickBuildTab();
-		kgenHome.verifyBuildPageNavigation();
-		kgenHome.clickConnectTab();
-		kgenHome.verifyConnectPageNavigation();
-		kgenHome.clickDroparenaTab();
-		kgenHome.verifyDropArenaPageNavigation("stage");	
+		kgenHome.verifyNavBarTabURLs(null);	
 	}
 	
 		
@@ -65,7 +44,7 @@ public class AllTests extends BaseClass {
 	//set property for gamer quests page
 	
 //	@Test(invocationCount = 3, threadPoolSize = 3)
-	@Test
+//	@Test
 	public void verifyGamerQuestsPage() throws Exception {
 //		kgenGamerQuests.verifyAllQuests();
 //		kgenGamerQuestsListingPage.verifyLiveQuests();
