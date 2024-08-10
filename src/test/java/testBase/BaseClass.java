@@ -14,13 +14,11 @@ import pageObjects.Login;
 import pageObjects.NavBar;
 import pageObjects.KgenGamerQuestsListingPage;
 import pageObjects.Store;
-import pageObjects.Users1;
 import reusableComponents.API;
 import reusableComponents.ActionEngine;
 import reusableComponents.AllApi;
 import reusableComponents.CommonMethods;
 import reusableComponents.DataBaseOperations;
-import reusableComponents.ExcelOperations;
 import reusableComponents.PropertiesOperations;
 
 public class BaseClass extends ActionEngine {
@@ -54,7 +52,7 @@ public class BaseClass extends ActionEngine {
 		WebDriver driver = LocalDriverFactory.getInstance().getLocalDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.get(PropertiesOperations.getProperty("stageKgenGamerQuests"));
+		driver.get(PropertiesOperations.getProperty("stageKgenHome"));
 
 //		login = new Login1();
 //		users = new Users1();

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-04T14:49:24 IST" name="Suite" finished-at="2024-08-04T14:51:42 IST" duration-ms="138363">
+  <suite started-at="2024-08-10T21:25:13 IST" name="Suite" finished-at="2024-08-10T21:28:28 IST" duration-ms="194870">
     <groups>
     </groups>
-    <test started-at="2024-08-04T14:49:24 IST" name="Test" finished-at="2024-08-04T14:51:42 IST" duration-ms="138363">
+    <test started-at="2024-08-10T21:25:13 IST" name="Test" finished-at="2024-08-10T21:28:28 IST" duration-ms="194870">
       <class name="test.AllTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-04T14:49:24 IST" name="setup" finished-at="2024-08-04T14:50:08 IST" duration-ms="44195" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-10T21:25:13 IST" name="setup" finished-at="2024-08-10T21:25:47 IST" duration-ms="33550" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyGamerQuestsPage()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-04T14:50:08 IST" name="verifyGamerQuestsPage" finished-at="2024-08-04T14:51:42 IST" duration-ms="93863" status="PASS">
+        <test-method signature="navBarNavigationKgenHome()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-10T21:25:47 IST" name="navBarNavigationKgenHome" finished-at="2024-08-10T21:28:27 IST" duration-ms="160627" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyGamerQuestsPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-04T14:51:42 IST" name="tearDown" finished-at="2024-08-04T14:51:42 IST" duration-ms="172" status="PASS">
+        </test-method> <!-- navBarNavigationKgenHome -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.AllTests@4567f35d]" started-at="2024-08-10T21:28:27 IST" name="tearDown" finished-at="2024-08-10T21:28:28 IST" duration-ms="577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
