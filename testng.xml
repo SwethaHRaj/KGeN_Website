@@ -5,9 +5,9 @@
 		<listener class-name="reusableComponents.MyListener"></listener>
 		<listener class-name="reusableComponents.TestRetryAnalyserListener"></listener>
 	</listeners>
-	<test thread-count="5" parallel="methods" name="Test">
+	<test thread-count="3" parallel="methods" name="Test">
 		<classes>
-			<class name="test.LoginTest" />
+			<class name="test.AllTests" />
 			<!-- <class name="test.LoginTest" />-->
 		</classes>
 	</test> <!-- Test -->

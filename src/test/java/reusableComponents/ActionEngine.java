@@ -108,7 +108,7 @@ public class ActionEngine {
 					actual + " and " + expected + " Matched successfully");
 		} catch (Exception e) {
 			ExtentTestFactory.getInstance().getExtentTest().log(Status.FAIL,
-					actual + " and " + expected + " not Matched due to exception" + e);
+					actual + " and " + expected + " Not Matched due to exception" + e);
 		}
 	}
 

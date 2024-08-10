@@ -38,3 +38,15 @@ public class Home extends BaseClass {
 //a[@href='/gamer/quests/karate-combat-v']//div[@class='MuiStack-root css-1j0yq0g']
 
 //span[normalize-space()='Karate Combat V']
+
+
+
+/**		Thread.sleep(20);
+if(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//button[@class='button_buttonBody__CW6b6 button_variant-primary__XZGfJ kcash-bonus-Modal_contentAmountInnerClaimDiv__HUArD']")).isDisplayed()==false) {	
+else if(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//button[@class='button_buttonBody__CW6b6 button_variant-primary__XZGfJ kcash-bonus-Modal_contentAmountInnerClaimDiv__HUArD']")).isDisplayed()==true) {
+	click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(By.xpath("//img[@alt='close-icon']")),"Loyalty Bonus Popup Close Icon");
+	//span[@class='kcash-bonus-Modal_contentAmountInnerClaimDivText__Xdv5F']   ------> Claim cta
+}
+else
+	Thread.sleep(20); 
+**/

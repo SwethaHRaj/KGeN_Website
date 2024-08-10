@@ -3,11 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.DemoTest">
+      <class name="test.AllTests">
         <methods>
-          <include name="testDataBase"/>
+          <include name="tearDown"/>
+          <include name="verifyFeaturedQuestsSection"/>
+          <include name="navBarNavigationKgenHome"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- test.DemoTest -->
+      </class> <!-- test.AllTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
