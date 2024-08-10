@@ -2,6 +2,7 @@ package test;
 
 import org.testng.annotations.Test;
 
+import pageObjects.KgenHome;
 import reusableComponents.AllApi;
 import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
@@ -26,6 +27,13 @@ public class LoginTest extends BaseClass {
 //		allApi.getFeaturedQuests();
 //		home.verifyFeaturedQuestsSection();
 		
+	}
+		
+	//set property for kgen home page
+	
+//	@Test(invocationCount = 3, threadPoolSize = 3)
+	@Test
+		public void navBarNavigationKgenHome() throws InterruptedException {		
 //		store.verifyKStoreHomePageNavigation();
 //		store.clickLoginButton();
 //		store.verifyLoginWindowNavigation();
@@ -34,19 +42,21 @@ public class LoginTest extends BaseClass {
 //		store.verifyOTPWindowNavigation();
 //		store.enterOtp(PropertiesOperations.getProperty("otp"));
 //		store.clickSubmitButton();
-		
-		kgenHome.clickAboutTab();
-		kgenHome.verifyAboutPageNavigation();
-		kgenHome.clickBuildTab();
-		kgenHome.verifyBuildPageNavigation();
-		kgenHome.clickConnectTab();
-		kgenHome.verifyConnectPageNavigation();
-		kgenHome.clickDroparenaTab();
-		kgenHome.verifyDropArenaPageNavigation();
-		
+		kgenHome.verifyNavBarTabURLs("stage");
 	}
 	
-	
+
+//	@Test(invocationCount = 3, threadPoolSize = 3)
+//	@Test
+	public void verifyGamerQuestsPage() throws Exception {
+//		kgenGamerQuests.verifyAllQuests();
+//		kgenGamerQuestsListingPage.verifyLiveQuests();
+//		kgenGamerQuestsListingPage.verifyUpcomingQuests();
+//		kgenGamerQuestsListingPage.verifyEndedQuests();
+//		kgenGamerQuestsListingPage.clickQuestCard();
+//		kgenGamerQuestDetailsPage.submitProof();
+	}
+
 	
 	
 	
