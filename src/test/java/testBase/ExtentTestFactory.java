@@ -22,6 +22,9 @@ public class ExtentTestFactory {
 	}
 
 	public ExtentTest getExtentTest() {
+		if (extentTest.get() == null) {
+	        throw new IllegalStateException("ExtentTest is not initialized.");
+	    }
 		return extentTest.get();
 	}
 

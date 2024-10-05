@@ -68,9 +68,11 @@ public class MyListener implements ITestListener {
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+		ExtentTestFactory.getInstance().removeExtentTest();
 	}
 
 	public void onTestFailedWithTimeout(ITestResult result) {
+		ExtentTestFactory.getInstance().removeExtentTest();
 	}
 
 	public void onStart(ITestContext context) {
@@ -79,5 +81,6 @@ public class MyListener implements ITestListener {
 
 	public void onFinish(ITestContext context) {
 		report.flush();
+		ExtentTestFactory.getInstance().removeExtentTest();
 	}
 }

@@ -6,9 +6,8 @@
       <class name="test.AllTests">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyFeaturedQuestsSection"/>
-          <include name="navBarNavigationKgenHome"/>
           <include name="setup"/>
+          <include name="kDropTest"/>
         </methods>
       </class> <!-- test.AllTests -->
     </classes>

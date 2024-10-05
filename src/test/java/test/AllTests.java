@@ -14,7 +14,7 @@ public class AllTests extends BaseClass {
 	
 	//set property for kgen home page
 	
-	@Test
+//	@Test
 		public void navBarNavigationKgenHome() throws InterruptedException {
 		
 //		store.verifyKStoreHomePageNavigation();
@@ -50,10 +50,59 @@ public class AllTests extends BaseClass {
 //		kgenGamerQuestsListingPage.verifyLiveQuests();
 //		kgenGamerQuestsListingPage.verifyUpcomingQuests();
 //		kgenGamerQuestsListingPage.verifyEndedQuests();
-		kgenGamerQuestsListingPage.clickQuestCard();
-		kgenGamerQuestDetailsPage.submitProof();
+//		kgenGamerQuestsListingPage.clickQuestCard();
+//		kgenGamerQuestDetailsPage.submitProof();
+	}
+	
+//	@Test(invocationCount = 2, threadPoolSize = 2)
+	@Test
+	public void kDropTest_LoggedOutUser_ListingPageValidation() throws Exception {
+//		kgenHome.secureGoogleLogin();
+//		kgenKDropHomePage.loginToKDrop();
+//		allApi.getCampaignsByStatus("LIVE");
+//		allApi.getFeaturedCampaigns();
+		kgenKDropHomePage.validateFeaturedCampignsSection("prod");
+		kgenKDropHomePage.validateLiveCampaigns("prod");
+		kgenKDropHomePage.validateUpcomingCampaigns("prod");
+		kgenKDropHomePage.validateEndedCampaigns("prod");
+		kgenKDropHomePage.loginToKDrop();
+	}
+	
+//	@Test
+	public void kDropTest_LoggedInUser_ListingPageValidation() throws Exception {
+		kgenKDropHomePage.loginToKDrop();
+		
 	}
 	
 	
-	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

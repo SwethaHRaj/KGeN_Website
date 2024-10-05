@@ -2,9 +2,12 @@ package pageObjects;
 import java.time.Duration;
 import java.util.Set;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+
+import freemarker.core.CustomAttribute;
 import freemarker.core.Environment;
 import reusableComponents.PropertiesOperations;
 import testBase.BaseClass;
@@ -12,6 +15,15 @@ import testBase.LocalDriverFactory;
 public class KgenHome extends BaseClass {
 	
 	String expectedUrl;
+	
+	
+	//Secure login by google
+	By google_cta = By.id("idp1");
+	By google_emailAddressInputField = By.id("identifierId");
+	By google_emailAddressNextButton = By.xpath("//button/span[text()='Next']");
+	By google_passwordInputFieldText = By.xpath("//div[text()='Enter your password']/..");
+	By google_passwordInputField = By.xpath("//div[@class='Xb9hP']/input[@class='whsOnd zHQkBf']");
+	By google_passwordNextButton = By.xpath("//button/span[text()='Next']");
 	
 	
 	// NavBar tabs
@@ -40,6 +52,22 @@ public class KgenHome extends BaseClass {
 	
 	
 	//----------------------------------------------ABOUT Section Methods----------------------------------------------
+	
+	
+	public void secureGoogleLogin() throws InterruptedException {
+		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_cta), "Google Cta");
+		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_emailAddressInputField), "Email Address Field", "swetha.hr@kgen.io");
+		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_emailAddressNextButton), "Email Next Cta");
+		WebDriverWait wait = new WebDriverWait(LocalDriverFactory.getInstance().getLocalDriver(), Duration.ofSeconds(20));
+		wait.until(ExpectedConditions.visibilityOf(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_passwordInputFieldText)));
+//		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_passwordInputField), "Password Next Cta");
+//		JavascriptExecutor js = (JavascriptExecutor) LocalDriverFactory.getInstance().getLocalDriver();
+//		js.executeScript("arguments[0].value='Swethahr@indigg';", LocalDriverFactory.getInstance().getLocalDriver().findElement(google_passwordInputField));
+		sendKeys_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_passwordInputField), "Password Field", "Swethahr@indigg");
+		Thread.sleep(5000);
+		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(google_passwordNextButton), "Password Next Cta");
+	}
+	
 	
 	public void clickAboutTab() {	
 		click_Custom(LocalDriverFactory.getInstance().getLocalDriver().findElement(about_tab), "About Tab");

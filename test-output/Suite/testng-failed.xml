@@ -5,12 +5,12 @@
     <listener class-name="reusableComponents.MyListener"/>
     <listener class-name="reusableComponents.TestRetryAnalyserListener"/>
   </listeners>
-  <test thread-count="5" parallel="methods" name="Test(failed)">
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
       <class name="test.AllTests">
         <methods>
           <include name="tearDown"/>
-          <include name="navBarNavigationKgenHome"/>
+          <include name="kDropTest_LoggedOutUser_ListingPageValidation"/>
           <include name="setup"/>
         </methods>
       </class> <!-- test.AllTests -->

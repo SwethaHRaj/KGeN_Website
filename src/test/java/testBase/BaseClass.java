@@ -10,6 +10,7 @@ import pageObjects.Home;
 import pageObjects.KgenGamerHome;
 import pageObjects.KgenGamerQuestDetailsPage;
 import pageObjects.KgenHome;
+import pageObjects.KgenKDropHomePage;
 import pageObjects.Login;
 import pageObjects.NavBar;
 import pageObjects.KgenGamerQuestsListingPage;
@@ -42,6 +43,8 @@ public class BaseClass extends ActionEngine {
 	public KgenGamerQuestsListingPage kgenGamerQuestsListingPage;
 	public KgenGamerQuestDetailsPage kgenGamerQuestDetailsPage;
 	
+	public KgenKDropHomePage kgenKDropHomePage;
+	
 	public Store store;
 	
 
@@ -52,11 +55,8 @@ public class BaseClass extends ActionEngine {
 		WebDriver driver = LocalDriverFactory.getInstance().getLocalDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		driver.get(PropertiesOperations.getProperty("stageKgenHome"));
+		driver.get(PropertiesOperations.getProperty("prodKgenKDropHomePage"));
 
-//		login = new Login1();
-//		users = new Users1();
-//		addUser = new AddUser1();
 		db=new DataBaseOperations();
 		
 		home = new Home();
@@ -70,6 +70,8 @@ public class BaseClass extends ActionEngine {
 		kgenGamerHome = new KgenGamerHome();
 		kgenGamerQuestsListingPage = new KgenGamerQuestsListingPage();
 		kgenGamerQuestDetailsPage = new KgenGamerQuestDetailsPage();
+		
+		kgenKDropHomePage =  new KgenKDropHomePage();
 	}
 
 	@AfterMethod
